@@ -13,3 +13,21 @@ top_four_percent_captured <- function(actual, predicted) {
 
   sum(pull(df_cutoff, actual) == 1) / sum(pull(df, actual) == 1)
 }
+
+weighted_gini <- function(actual, predicted) {
+  df <- tibble(actual, predicted) %>%
+    arrange(desc(predicted)) %>%
+    mutate(weight = if_else(actual == 0, 20, 1)) %>%
+    mutate(random = cumsum(weight / sum(weight)))
+
+  total_pos <- df %>%
+    summarise(sum(actual * weight)) %>%
+    pull
+
+  df %>%
+    mutate(cum_pos_found = cumsum(actual * weight)) %>%
+    mutate(lorentz = cum_pos_found / total_pos) %>%
+    mutate(gini = (lorentz - random) * weight) %>%
+    summarise(sum(gini)) %>%
+    pull
+}
