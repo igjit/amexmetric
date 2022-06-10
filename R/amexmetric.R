@@ -1,5 +1,9 @@
+#' Compute the metric for the Amex competition
+#'
 #' @import dplyr
-
+#' @param actual ground truth vector
+#' @param predicted predicted vector
+#' @export
 amex_metric <- function(actual, predicted) {
   g <- normalized_weighted_gini(actual, predicted)
   d <- top_four_percent_captured(actual, predicted)
