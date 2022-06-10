@@ -6,6 +6,8 @@
 <!-- badges: start -->
 
 [![R-CMD-check](https://github.com/igjit/amexmetric/workflows/R-CMD-check/badge.svg)](https://github.com/igjit/amexmetric/actions)
+[![Codecov test
+coverage](https://codecov.io/gh/igjit/amexmetric/branch/main/graph/badge.svg)](https://app.codecov.io/gh/igjit/amexmetric?branch=main)
 <!-- badges: end -->
 
 An R implementation of the metric for the [Amex
