@@ -31,3 +31,7 @@ weighted_gini <- function(actual, predicted) {
     summarise(sum(gini)) %>%
     pull
 }
+
+normalized_weighted_gini <- function(actual, predicted) {
+  weighted_gini(actual, predicted) / weighted_gini(actual, actual)
+}

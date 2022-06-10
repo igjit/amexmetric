@@ -8,3 +8,8 @@ test_that("weighted_gini works", {
   expect_equal(weighted_gini(c(1, 0, 0, 0), 4:1), 20.655738)
   expect_equal(weighted_gini(c(0, 1, 0, 0), 4:1), 0.6557377)
 })
+
+test_that("normalized_weighted_gini works", {
+  expect_equal(normalized_weighted_gini(c(1, 0, 0, 0), 4:1), 1.0)
+  expect_equal(normalized_weighted_gini(c(0, 1, 0, 0), 4:1), 0.031746032)
+})
