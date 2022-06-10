@@ -4,6 +4,8 @@
 # amexmetric
 
 <!-- badges: start -->
+
+[![R-CMD-check](https://github.com/igjit/amexmetric/workflows/R-CMD-check/badge.svg)](https://github.com/igjit/amexmetric/actions)
 <!-- badges: end -->
 
 An R implementation of the metric for the [Amex
