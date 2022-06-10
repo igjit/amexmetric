@@ -13,3 +13,7 @@ test_that("normalized_weighted_gini works", {
   expect_equal(normalized_weighted_gini(c(1, 0, 0, 0), 4:1), 1.0)
   expect_equal(normalized_weighted_gini(c(0, 1, 0, 0), 4:1), 0.031746032)
 })
+
+test_that("amex_metric works", {
+  expect_equal(amex_metric(c(1, 1, 0, 0), 4:1), 0.75)
+})

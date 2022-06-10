@@ -1,5 +1,12 @@
 #' @import dplyr
 
+amex_metric <- function(actual, predicted) {
+  g <- normalized_weighted_gini(actual, predicted)
+  d <- top_four_percent_captured(actual, predicted)
+
+  0.5 * (g + d)
+}
+
 top_four_percent_captured <- function(actual, predicted) {
   df <- tibble(actual, predicted) %>%
     arrange(desc(predicted)) %>%
